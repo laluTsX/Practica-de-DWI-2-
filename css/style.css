@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* LOGIN STYLES */
+.login-body {
+    background: linear-gradient(135deg, #1e3c2c 0%, #2a5a3a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+.login-card {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.login-card h1 {
+    color: #1e3c2c;
+    font-size: 2rem;
+}
+.login-card h1 span { color: #e67e22; }
+.subtitle { color: #7f8c8d; margin-bottom: 30px; }
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+.btn-primary {
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+.btn-primary:hover { background: #d35400; }
+.info {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+/* DASHBOARD STYLES */
+.app-header {
+    background: #1e3c2c;
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.btn-logout {
+    background: #c0392b;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 24px;
+    padding: 32px;
+    background: #f4f7f3;
+    min-height: calc(100vh - 70px);
+}
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.card h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-left: 5px solid #e67e22;
+    padding-left: 12px;
+}
+input, select, textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+textarea {
+    resize: vertical;
+}
+.btn-success {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.imc-badge {
+    margin-top: 10px;
+    padding: 10px;
+    background: #ecf0f1;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+.history-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+.history-item {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    border-left: 4px solid #e67e22;
+}
+.history-date {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    margin-bottom: 6px;
+}
+.placeholder {
+    color: #95a5a6;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Estilos para botones adicionales */
+.btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.btn-warning {
+    background: #ffc107;
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+}
+
+/* Estilos para fecha y hora */
+.datetime-group {
+    margin-bottom: 15px;
+}
+
+.datetime-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.datetime-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.modal-body label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-body textarea {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Botón de editar en historial */
+.edit-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+.edit-btn:hover {
+    background: #2980b9;
+}
+

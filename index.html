@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutri Nepu - Clinical Access</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-card">
+            <h1> Nutri Clinica <span>Nepomuceno</span></h1>
+            <p class="subtitle"> Portal Clinico </p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="ej. Dr. Laura Méndez" required autocomplete="off">
+                </div>
+                <button type="submit" class="btn-primary">Iniciar sesion</button>
+            </form>
+            <p class="info">Clinica Nutricional</p>
+        </div>
+    </div>
+    <script type="module">
+        import { login } from './js/auth.js';
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            if (login(nombre)) window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

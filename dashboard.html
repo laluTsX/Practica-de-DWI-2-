@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutri Nepu - Clinical Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-header">
+        <h2> Nutri Clinica Nepomuceno</h2>
+        <div class="user-info">
+            <span id="currentUser"></span>
+            <button id="logoutBtn" class="btn-logout">🚪 Cerrar Sesion</button>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Sección Nuevo Paciente -->
+        <div class="card">
+            <h3> Nuevo Paciente</h3>
+            <form id="registerPatientForm">
+                <input type="text" id="patName" placeholder="Nombre Completo" required>
+                <input type="number" id="patAge" placeholder="Edad (años)" required>
+                <input type="number" step="0.1" id="patWeight" placeholder="Peso (kg)" required>
+                <input type="number" step="0.01" id="patHeight" placeholder="Estatura (m)" required>
+                <button type="submit" class="btn-success"> Registrar y Calcular IMC</button>
+            </form>
+            <div id="imcResult" class="imc-badge"></div>
+            
+            <!-- Botón para limpiar todos los pacientes -->
+            <button id="clearAllPatientsBtn" class="btn-danger" style="margin-top: 15px; width: 100%;"> Eliminar Todos los Pacientes</button>
+        </div>
+
+        <!-- Sección Pacientes y Consulta -->
+        <div class="card">
+            <h3> Pacientes Registrados</h3>
+            <select id="patientSelect" size="5" style="width:100%; padding:8px;">
+                <option value=""> Selecciona un paciente </option>
+            </select>
+            
+            <!-- Botón para eliminar paciente seleccionado -->
+            <button id="deleteSelectedPatientBtn" class="btn-warning" style="margin-top: 10px; width: 100%;"> Eliminar Paciente Seleccionado</button>
+            
+            <div id="consultationArea" style="margin-top:20px; display:none;">
+                <h4> Nueva Consulta</h4>
+                
+                <!-- Selector de fecha y hora -->
+                <div class="datetime-group">
+                    <label> Fecha y Hora de la Consulta:</label>
+                    <input type="datetime-local" id="consultaFechaHora" class="datetime-input">
+                </div>
+                
+                <textarea id="evolucion" rows="2" placeholder="Evolucion Clinica ..."></textarea>
+                <textarea id="planDieta" rows="2" placeholder="Plan de alimentacion ..."></textarea>
+                <button id="saveConsultationBtn" class="btn-primary"> Guardar Consulta</button>
+            </div>
+        </div>
+
+        <!-- Sección Historial -->
+        <div class="card history-card">
+            <h3> Historial Cronológico</h3>
+            <div id="historyList" class="history-list">
+                <p class="placeholder">Selecciona un paciente para ver su historial</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar consulta -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3> Editar Consulta</h3>
+            <div class="modal-body">
+                <label> Fecha y Hora:</label>
+                <input type="datetime-local" id="editFechaHora" class="datetime-input">
+                
+                <label> Evolución:</label>
+                <textarea id="editEvolucion" rows="3"></textarea>
+                
+                <label> Plan de Alimentación:</label>
+                <textarea id="editPlanDieta" rows="3"></textarea>
+                
+                <button id="saveEditBtn" class="btn-primary"> Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
